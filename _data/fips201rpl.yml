@@ -8,6 +8,8 @@
     numberApl: '10014'
     reason: 'Per vendor request'
     status: post
+    system: 13.01
+    
 
 -   category: 'PACS Infrastructure'
     supplier: 'Identiv'
@@ -17,6 +19,7 @@
     numberApl: '10013'
     reason: 'Per vendor request'
     status: post
+    system: 13.01
 
 -   category: 'PACS Infrastructure'
     supplier: 'American Direct Procurement, Inc.'
@@ -26,6 +29,8 @@
     numberApl: '10043'
     reason: 'Not approved for FRTC 1.4.2'
     status: post
+    system: 13.01
+
     
 -   category: 'PACS Infrastructure'
     supplier: 'AMAG Symmetry Professional V8.1'
@@ -35,6 +40,7 @@
     numberApl: '10087'
     reason: 'Not approved for FRTC 1.3.3'
     status: post
+    system: 13.01
     
 -   category: 'PACS Validation System'
     supplier: 'HID Global'
@@ -44,6 +50,7 @@
     numberApl: '10044'
     reason: 'Not approved for FRTC 1.4.2'
     status: post
+    system: 13.01
 
 -   category: 'PACS Validation System'
     supplier: 'Technology Industries'
@@ -53,6 +60,7 @@
     numberApl: '10086'
     reason: 'Not approved for FRTC 1.3.3'
     status: post
+    system: 13.01
 
 -   category: 'PACS Infrastructure'
     supplier: 'Brivo'
@@ -62,8 +70,9 @@
     numberApl: '10009 & 10010'
     reason: 'Components end of sale'
     status: post
+    system: 13.01
 
-# Creates a blank entry in the PIV Card Table
+# Creates a blank entry for PIV Card 
 - category: 'PIV Card'
   supplier: '---'
   nameProduct: '---'
@@ -72,6 +81,19 @@
   numberApl: '---'
   reason: '---'
   status: '---'
+  system: 
+
+# Added PAC Validation back to list per Sutapa 
+# for correct [a-z] listing of categories.
+- category: 'PACS and Validation Infrastructure'
+  supplier: '---'
+  nameProduct: '---'
+  numberProduct: '---'
+  dateRemoval: '---'
+  numberApl: '---'
+  reason: '---'
+  status: '---'
+  system: 13.02
 
 # - category: 'PIV Card'
 #   supplier: 'Idemia'
@@ -173,43 +195,47 @@
 #   status: post
 #   note: 'moved to legacy'
 
-# -  category: 'PACS and Validation Infrastructure'
-#    supplier: Vicount
-#    nameProduct: 'PACS and Validation Software for Viscount Freedom 1302'
-#    numberProduct: '30-1302-PVS,50-1302-PIV,30-1302-FCM,50-1302-1'
-#    dateRemoval: 'Wednesday, November 25, 2020'
-#    numberApl: '10029'
-#    reason: 'Not approved for FRTC 1.3.3'
-#    status: post
+# - category: 'PACS and Validation Infrastructure'
+#   supplier: Vicount
+#   nameProduct: 'PACS and Validation Software for Viscount Freedom 1302'
+#   numberProduct: '30-1302-PVS,50-1302-PIV,30-1302-FCM,50-1302-1'
+#   dateRemoval: 'Wednesday, November 25, 2020'
+#   numberApl: '10029'
+#   reason: 'Not approved for FRTC 1.3.3'
+#   status: post
+#   system: '13.02'
     
-# -   category: 'PACS Infrastructure'
-#     supplier: 'Galaxy Control Systems'
-#     nameProduct: 'System Galaxy Software'
-#     numberProduct: '90-0600-20-#SD'
-#     dateRemoval: 'Thursday, February 13, 2020'
-#     numberApl: '10097'
-#     reason: 'Not approved for FRTC 1.3.3'
-#     status: post
-# -
-#     category: 'PACS Validation System'
-#     supplier: 'HID Global'
-#     nameProduct: 'pivCLASS Registration Engine for Galaxy GCS'
-#     numberProduct: PVCP-D/S-32-00
-#     dateRemoval: 'Thursday, February 13, 2020'
-#     numberApl: '10098'
-#     reason: 'Not approved for FRTC 1.3.3'
-#     status: post
-# -
-    # category: 'PACS Infrastructure'
-    # supplier: 'Monitor Dynamics'
-    # nameProduct: SafeNet
-    # numberProduct: F50-101xx-SP4
-    # dateRemoval: 'Thursday, February 13, 2020'
-    # numberApl: '10024'
-    # reason: 'Not approved for FRTC 1.3.3'
-    # status: post
-# -
-#     category: 'PACS Validation System'
+# - category: 'PACS Infrastructure'
+#   supplier: 'Galaxy Control Systems'
+#   nameProduct: 'System Galaxy Software'
+#   numberProduct: '90-0600-20-#SD'
+#   dateRemoval: 'Thursday, February 13, 2020'
+#   numberApl: '10097'
+#   reason: 'Not approved for FRTC 1.3.3'
+#   status: post
+#   system: 13.01
+
+# - category: 'PACS Validation System'
+#   supplier: 'HID Global'
+#   nameProduct: 'pivCLASS Registration Engine for Galaxy GCS'
+#   numberProduct: PVCP-D/S-32-00
+#   dateRemoval: 'Thursday, February 13, 2020'
+#   numberApl: '10098'
+#   reason: 'Not approved for FRTC 1.3.3'
+#   status: post
+#   system: 13.01
+
+# - category: 'PACS Infrastructure'
+#   supplier: 'Monitor Dynamics'
+#   nameProduct: SafeNet
+#   numberProduct: F50-101xx-SP4
+#   dateRemoval: 'Thursday, February 13, 2020'
+#   numberApl: '10024'
+#   reason: 'Not approved for FRTC 1.3.3'
+#   status: post
+#   system: 13.01
+
+# -  category: 'PACS Validation System'
 #     supplier: 'HID Global'
 #     nameProduct: 'FIPS 201 SDK Runtime with SafeNET Plug-in'
 #     numberProduct: PVC-API-RTL-25-00
@@ -217,6 +243,7 @@
 #     numberApl: '10025'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: post
+#     system: 13.01
 # -
 #     category: 'PACS Infrastructure'
 #     supplier: BridgePoint
@@ -226,6 +253,7 @@
 #     numberApl: '10049'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: post
+#     system: 13.01
 # -
 #     category: 'PACS Validation System'
 #     supplier: BridgePoint
@@ -235,6 +263,7 @@
 #     numberApl: '10050'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Validation System'
 #     supplier: 'HID Global'
@@ -244,6 +273,7 @@
 #     numberApl: '10018'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Validation System'
 #     supplier: 'HID Global'
@@ -253,6 +283,7 @@
 #     numberApl: '10012'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Infrastructure'
 #     supplier: 'Johnson Controls'
@@ -261,7 +292,8 @@
 #     dateRemoval: 'Thursday, September 13, 2018'
 #     numberApl: '10017'
 #     reason: 'Not approved for FRTC 1.3.3'
-# #     status: archive
+#     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Infrastructure'
 #     supplier: 'Secure Network Systems'
@@ -271,6 +303,7 @@
 #     numberApl: '10040'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Validation System'
 #     supplier: 'Technology Industries'
@@ -280,6 +313,7 @@
 #     numberApl: '10045'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Validation System'
 #     supplier: 'Technology Industries'
@@ -288,6 +322,7 @@
 #     dateRemoval: 'Thursday, September 13, 2018'
 #     numberApl: '10066'
 #     reason: 'Not approved for FRTC 1.3.3'
+#     system: 13.01
 # -
 #     category: 'PACS Infrastructure'
 #     supplier: 'The Will-Burt Company'
@@ -297,6 +332,7 @@
 #     numberApl: '10065'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Infrastructure'
 #     supplier: 'Johnson Controls/Tyco'
@@ -306,6 +342,7 @@
 #     numberApl: '10011'
 #     reason: 'Not approved for FRTC 1.3.3'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PIV Card'
 #     supplier: Gemalto
@@ -558,6 +595,7 @@
 #     numberApl: '10073'
 #     reason: 'Discontinued product'
 #     status: archive
+#     system: 13.01
 # -
 #     category: 'PACS Validation System'
 #     supplier: 'HID Global'
@@ -567,8 +605,9 @@
 #     numberApl: '10074'
 #     reason: 'Discontinued product'
 #     status: archive
-# -
-#     category: 'PIV Card'
+#     system: 13.01
+#
+# -   category: 'PIV Card'
 #     supplier: 'Oberthur Technologies'
 #     nameProduct: 'ID-One PIV (Type A) Large D'
 #     numberProduct: '1107252'

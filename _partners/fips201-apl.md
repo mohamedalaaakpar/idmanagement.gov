@@ -207,7 +207,7 @@ Legacy PIV cards include the following:
       <th data-sortable scope="col" role="columnheader" >Supplier</th>
       <th data-sortable scope="col" role="columnheader" >Product Name(s)</th>
       <th data-sortable scope="col" role="columnheader" >Product Number</th>
-      <th data-sortable scope="col" role="columnheader" >Removal Date</th>
+      <th data-sortable scope="col" role="columnheader" >Legacy Date</th>
       <th data-sortable scope="col" role="columnheader" >Reason For Removal</th>
     </tr> 
   </thead>
@@ -254,10 +254,15 @@ The FIPS 201 Evaluation Program’s Removed Products List (RPL) displays product
 
 {% for category in categories %}
 <table class="usa-table">
-  <caption> {{ category }} List</caption>
+  <caption> {{ category }} Category List</caption>
+    {% for rplsys in site.data.fips201rpl %}
+      {% if rplsys.category == category %}
+        {% assign system = rplsys.system %}
+      {% endif %}
+    {% endfor %}
   <thead>
     <tr>
-        <th scope="col" role="columnheader" colspan="6"><b>{{ category }} Category</b></th>
+        <th scope="col" role="columnheader" colspan="6"><b>{{ category }} Category</b> {% if system or system != NULL %}( {{ system }} ){% endif %}</th>
     </tr>
     <tr>
       <th data-sortable scope="col" role="columnheader" aria-sort="ascending">APL #</th>
@@ -274,10 +279,10 @@ The FIPS 201 Evaluation Program’s Removed Products List (RPL) displays product
             <tr>
               <th scope="row">{{ rpln.numberApl }}</th>
               <td data-sort-value="{{ rpln.supplier }}">{{ rpln.supplier }}</td>
-              <td data-sort-value="{{ rpln.nameProduct}}">{{ rpln.nameProduct}}</td>
+              <td data-sort-value="{{ rpln.nameProduct }}">{{ rpln.nameProduct}}</td>
               <td data-sort-value="{{ rpln.numberProduct }}">{{ rpln.numberProduct }}</td>
-              <td data-sort-value="{{ rpln.dateRemoval}}">{{ rpln.dateRemoval}}</td>
-              <td data-sort-value="{{ rpln.reason}}">{{ rpln.reason}}</td>
+              <td data-sort-value="{{ rpln.dateRemoval }}">{{ rpln.dateRemoval}}</td>
+              <td data-sort-value="{{ rpln.reason }}">{{ rpln.reason}}</td>
             </tr>
     {% endif %}
   {% endfor %}
@@ -285,59 +290,4 @@ The FIPS 201 Evaluation Program’s Removed Products List (RPL) displays product
 </table>
 <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
 {% endfor %}
-
-<!-- Empty table initially - CJB -->
-<!-- New Section added 08/26/2024 -->
-<!-- PACS and Validation Infrastructure Category -->
-
-{% assign categories = "" | split: "" %}
-{% for fvi in site.data.fips201pacs-validation-inf %}
-  {% assign category = fvi.category | strip %}
-  {% assign categories = categories | push: category | uniq | sort %}
-{% endfor %}
-{% assign categories = categories | uniq | sort %}
-
-{% for category in categories %}
-<table class="usa-table">
-  <caption>{{ category }} List</caption>
-  <thead>
-    <tr>
-        <th scope="col" role="columnheader" colspan="6"><b>{{ category }} Category</b></th>
-    </tr>
-    <tr>
-      <th data-sortable scope="col" role="columnheader" aria-sort="ascending">APL #</th>
-      <th data-sortable scope="col" role="columnheader" >Supplier</th>
-      <th data-sortable scope="col" role="columnheader" >Product Name(s)</th>
-      <th data-sortable scope="col" role="columnheader" >Product Number</th>
-      <th data-sortable scope="col" role="columnheader" >Removal Date</th>
-      <th data-sortable scope="col" role="columnheader" >Reason For Removal</th>
-    </tr> 
-  </thead>
-  <tbody> 
-   {% for fvi in site.data.fips201pacs-validation-inf %}
-        {% if fvi.category == category %}
-          <tr>
-            <th scope="row">{{ fvi.numberApl }}</th>
-            <td data-sort-value="{{ fvi.supplier }}">{{ fvi.supplier }}</td>
-            <td data-sort-value="{{ fvi.nameProduct}}">{{ fvi.nameProduct}}</td>
-            <td data-sort-value="{{ fvi.numberProduct }}">{{ fvi.numberProduct }}</td>
-            <td data-sort-value="{{ fvi.dateRemoval}}">{{ fvi.dateRemoval}}</td>
-            <td data-sort-value="{{ fvi.reason}}">{{ fvi.reason}}</td>
-          </tr>
-        {% endif %}
-    {% endfor %} 
-  </tbody>
-</table> 
-<div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
-{% endfor %}
-
-
-
-
-
-
-
-
-
-
-
+<!-- end of RPL Listing -->
