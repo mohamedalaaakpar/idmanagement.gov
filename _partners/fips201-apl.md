@@ -229,7 +229,7 @@ Legacy PIV cards include the following:
 
 Agencies procuring cardstock from the legacy list assume all risks associated with its use.
 
-Suppose your agency needs to purchase cardstock from this legacy list. In that case, you must submit an Assumption of Risk Memorandum (memo) from the agency's Chief Information Officer(s) to the General Services Administration (GSA). The memo must contain the following information:
+If your agency needs to purchase cardstock from this legacy list. In that case, you must submit an Assumption of Risk Memorandum (memo) from the agency's Chief Information Officer(s) to the General Services Administration (GSA). The memo must contain the following information:
 
 - Acknowledgement of the assumption of all associated security risks;
 - Acknowledgement of non-compliance with NIST standards;
